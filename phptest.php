@@ -17,7 +17,9 @@
 		$option = isset($_POST['myTest']) ? $_POST['myTest'] : false;
 		if ($option){
 			$testField = $_Post['myTest'];
+			echo $testField;
 			$query = "	select ". $testField . " from users where id = 1;";
+			echo $query;
 			$result = $conn->query($query);
 			if(!$result) die($conn->error);
 			$rows = $result->num_rows;
