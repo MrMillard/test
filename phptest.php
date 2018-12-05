@@ -5,7 +5,7 @@
 <body>
 	<form action = 'phptest.php' method = "post">
 		<select name = "myTest">
-			<option value = "fname">first name</option>
+			<option value = "username">User Name</option>
 			<option value = "email">email</option>
 		</select>
 		<input type = "submit" value="submit the form">
@@ -16,7 +16,7 @@
 		if($conn->connect_error) die($conn->connect_error);
 		$option = isset($_POST['myTest']) ? $_POST['myTest'] : false;
 		if ($option){
-			$testField = $_Post['myTest'] 
+			$testField = $_Post['myTest'];
 			$query = "	select ". $testField . " from users where id = 1;";
 			$result = $conn->query($query);
 			if(!$result) die($conn->error);
