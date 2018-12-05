@@ -1,3 +1,41 @@
+<html>
+<head>
+	<title>phptest</title>
+</head>
+<body>
+	<form action = 'phptest.php' method = "post">
+		<select name = "myTest">
+			<option value = "fname">first name</option>
+			<option value = "email">email</option>
+		</select>
+		<input type = "submit" value="submit the form">
+	</form>
+	<?php
+		require_once 'login.php';
+		$conn = new mysqli($host, $user, $pass, $db, $port);
+		if($conn->connect_error) die($conn->connect_error);
+		$option = isset($_POST['myTest']) ? $_POST['myTest'] : false;
+		if ($option){
+			$testField = $_Post['myTest'] 
+			$query = "	select ". $testField . " from users where id = 1;";
+			$result = $conn->query($query);
+			if(!$result) die($conn->error);
+			$rows = $result->num_rows;
+			for ($j = 0; $j < $rows; ++$j){
+				$result->data_seek($j);
+				echo $result->fech_assoc()[$testField];
+			}
+		}
+		$result->close();
+		$conn->close();
+	?>
+</body>
+
+
+
+
+
+
 <?php
 	require_once 'login.php';
 	$connection = mysqli_connect($host, $user, $pass, $db, $port) or die(mysql_error());

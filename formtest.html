@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>formtest</title>
+</head>
+
+<body>
+	<form onsubmit="testfunction();" id = "query">
+  		<input type="text" name="querystring">
+  		<input type="submit" value="Submit">
+	</form>
+	<select form = "query">
+  		<option value="volvo">Volvo</option>
+  		<option value="saab">Saab</option>
+  		<option value="mercedes">Mercedes</option>
+  		<option value="audi">Audi</option>
+	</select>
+	<p id = "demo"></p>
+	<script>
+		function testfunction(){
+			var x = document.getElementById("query").elements["querystring"].value;
+			document.getElementById("demo").innerHTML =  x;
+		}
+</body>
+
+</html>
