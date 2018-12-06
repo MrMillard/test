@@ -1,5 +1,6 @@
-include_once 'formtest.html'
+
 	<?php
+		include_once 'formtest.html';
 		require_once 'login.php';
 		$conn = mysqli_connect($host, $user, $pass, $db, $port);
 		if($conn->connect_error) die($conn->connect_error);
