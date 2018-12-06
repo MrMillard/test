@@ -1,15 +1,4 @@
-<html>
-<head>
-	<title>phptest</title>
-</head>
-<body>
-	<form action = 'phptest.php' method = "post">
-		<select name = "myTest">
-			<option value = "username">User Name</option>
-			<option value = "email">email</option>
-		</select>
-		<input type = "submit" value="submit the form">
-	</form>
+include_once 'formtest.html'
 	<?php
 		require_once 'login.php';
 		$conn = mysqli_connect($host, $user, $pass, $db, $port);
